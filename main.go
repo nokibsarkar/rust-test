@@ -36,17 +36,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Send the string "ABCDEF" to the serial port
-	n, err := fmt.Fprint(port, "ABCDEF")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Sent %v bytes\n", n)
+	// // Send the string "ABCDEF" to the serial port
+	// n, err := fmt.Fprint(port, "ABCDEF")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// fmt.Printf("Sent %v bytes\n", n)
 
 	// Read and print the response
-	buff := make([]byte, 100)
+	buff := make([]byte, 500)
 	for {
-		// Reads up to 100 bytes
+		// Reads up to 500 bytes
 		n, err := port.Read(buff)
 		if err != nil {
 			log.Fatal(err)
