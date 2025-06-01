@@ -5,26 +5,25 @@ name: Go
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
-
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.24'
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.24"
 
-    - name: Build
-      run: go build -v ./...
-    - uses: actions/upload-artifact@v4.6.2
-      with:
-        path: e
-        
-    
+      - name: Build
+        run: |
+          go build -v ./...
+          ls
+      - uses: actions/upload-artifact@v4.6.2
+        with:
+          path: e
