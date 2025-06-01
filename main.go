@@ -55,6 +55,10 @@ func main() {
 			fmt.Println("\nEOF")
 			break
 		}
-		fmt.Printf("%v", string(buff[:n]))
+		// print as hex
+		fmt.Printf("Read %v bytes: ", n)
+		for i := 0; i < n; i++ {
+			fmt.Printf("%02X ", buff[i])
+		}
 	}
 }
